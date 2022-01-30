@@ -2,8 +2,10 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
+const date = require(__dirname + "/date.js");
 const mongoose = require("mongoose");
 const _ = require("lodash");
+
 
 const app = express();
 
@@ -21,6 +23,8 @@ mongoose.connect(
     useFindAndModify: false
   }
 )
+
+const day = date.getDate();
 
 const itemsSchema = {
   name: String
